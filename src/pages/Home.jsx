@@ -25,6 +25,7 @@ const Home = () => {
         <>
           <Menu />
           <Mobile />
+          <div className="mt-[100px" ></div>
           <Contact />
         </>
       )}
