@@ -9,13 +9,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import Login from "./components/Login";
+import ResetPassword from "./components/ResetPassword";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
+  const [showResetPassword,setShowResetPassword]=useState(false)
 
   return (
     <>
-      {showLogin ? <Login setShowLogin={setShowLogin} /> : <></>}
+      {showLogin && !showResetPassword ? <Login setShowLogin={setShowLogin} setShowResetPassword={setShowResetPassword} /> : <></>}
+      {showResetPassword?<ResetPassword setShowLogin={setShowLogin} setShowReserPassword={setShowResetPassword} />:<></>}
       <Router>
         <div className="w-[80%] m-auto ">
           <Navbar setShowLogin={setShowLogin} />

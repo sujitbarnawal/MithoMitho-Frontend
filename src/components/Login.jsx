@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { assets } from "../assets/assets";
 
-const Login = ({ setShowLogin }) => {
+const Login = ({ setShowLogin,setShowResetPassword }) => {
   const [state, setState] = useState("Sign Up");
 
   return (
@@ -25,7 +25,7 @@ const Login = ({ setShowLogin }) => {
           )}
           <input className="outline-none border-solid border-[#c9c9c9] border-[1px] p-2.5 rounded-lg " type="email" placeholder="Email" required />
           <input className="outline-none border-solid border-[#c9c9c9] border-[1px] p-2.5 rounded-lg " type="password" placeholder="Password" required />
-          {state==="Login"?<p className="cursor-pointer">Forgot password?</p>:""}
+          {state==="Login"?<p onClick={()=>setShowResetPassword(true)} className="cursor-pointer">Forgot password?</p>:""}
         </div>
 
         <button className="border-none p-2.5 rounded-lg text-white bg-[tomato] text-[15px] cursor-pointer" >{state === "Sign Up" ? "Create account" : "Login"}</button>
