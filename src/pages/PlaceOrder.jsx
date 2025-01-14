@@ -50,11 +50,12 @@ const PlaceOrder = () => {
               <b>Total</b>
               <b>
                 Rs.
-                {getTotalCartAmount() + getTotalCartAmount() > 0
-                  ? getTotalCartAmount() > 500
-                    ? 80
-                    : 40
-                  : 0}
+                {getTotalCartAmount() +
+                  (getTotalCartAmount() > 0
+                    ? getTotalCartAmount() > 500
+                      ? 80
+                      : 40
+                    : 0)}
               </b>
             </div>
           </div>
